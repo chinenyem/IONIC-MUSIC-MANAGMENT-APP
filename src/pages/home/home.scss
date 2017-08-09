@@ -1,3 +1,85 @@
 page-home {
+  .claims {
+    pre {
+      color: green;
+    }
+  }
+  pre {
+    border: 1px solid silver;
+    background: #eee;
+    padding: 10px;
+  }
+  // input[name='pin'] {
+  //   -webkit-text-security: square;
+  // }
+  .title{
+    font-family: $logo-cofefe-font;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    letter-spacing: 2px;
+  }
+  .menu-button{
+    color: black;
+  }
+  .logOut-button{
+    color: black;
+    font-family: $logo-cofefe-font;
+  }
+  img{
+    width: 35%;
+    margin-top: 3%;
+    margin-bottom: 4%;
+  }
+  .search-button * {
+    padding:0;
+    margin:0;
+    .search-container{
+      height:100%;
+      ion-col{
+        margin-top: 2%;
+        .search-button-child{
+          padding: 0;
+          margin-left: 0;
+          margin-right: 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+          border-top: 1px solid rgba(0, 0, 0, 0.23);
+        }
+      }
+    }
 
+  }
+  input{
+    text-align: center;
+  }
+  input[type="name"]{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+    border-top: 1px solid rgba(0, 0, 0, 0.23);
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+  }
+  .submit-btn, .button-ios, .button-default-ios{
+    margin: 0 auto;
+    margin-top: 20%;
+    width: 70%;
+    color: black;
+    background-color: rgb(236, 231, 231);;
+    opacity: 1;
+    box-shadow: 0px 6px 7px rgba(68, 66, 66, 0.28);
+    font-family: $logo-cofefe-font
+  }
+  .parent-container{
+    height:100%;
+    ion-row{
+
+    }
+    .search-button{
+      height:100%;
+    }
+  }
+ .toolbar-background .toolbar-background-ios{
+   border-style: none;
+   border-color: none;
+   border-style: none;
+   border-color: transparent;
+ }
 }

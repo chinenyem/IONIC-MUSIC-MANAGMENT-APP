@@ -1,0 +1,73 @@
+<!--
+  Generated template for the ArtistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons end>
+    <button ion-button menuToggle icon-only side="left" class="menu-button">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title class="title">COFEFE</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="logout()" side="right" class="logOut-button">
+        Logout
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding >
+  <ion-row>
+    <ion-col col-12 text-center no-padding>
+      <span class="artist-name">{{artistName}}</span>
+    </ion-col>
+    <ion-col col-12 text-center>
+      <span class="artist-image"><img src="{{artistPic}}"/></span>
+    </ion-col>
+    <ion-col col-11 text-left class="paddingBottom">
+      <p class="bio">
+        Biography
+      </p>
+    </ion-col>
+    <ion-col col-1 paddingBottom>
+      <button class="show" (click)="isBool = !isBool;">
+        <ion-icon name="arrow-down" class="arrow-down"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-12 text-wrap class="paddingTop" >
+      <div class="fade" [class.enter-active]="isBool">
+        <p>
+          {{aritstInfo.summary}}
+        </p>
+      </div>
+    </ion-col>
+    <ion-col col-12>
+      <button ion-button full outline (click)="similarArtist()">Similar Artist</button>
+    </ion-col>
+    <ion-col col-12>
+       <ion-scroll scrollX="true" class="wide-as-needed">
+         <ion-card *ngFor="let a of artistAlbum">
+            <img src="assets/images/lips1.svg"/>
+            <div class="card-title">{{a.name}}</div>
+            <div class="card-subtitle">{{a.playcount}} Plays</div>
+        </ion-card>
+       </ion-scroll>
+    </ion-col>
+    <ion-col col-12>
+      <ion-list>
+        <ion-item *ngFor="let a of artistTrack">
+          <h2>{{a.name}}</h2>
+          <p> Listeners: {{a.listeners}}</p>
+          <p> Playcount: {{a.playcount}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>

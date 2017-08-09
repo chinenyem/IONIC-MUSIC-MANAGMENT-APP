@@ -1,17 +1,42 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar hideBackButton>
+    <ion-buttons end>
+    <button ion-button menuToggle icon-only side="left" class="menu-button">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title class="title">COFEFE</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="logout()" side="right" class="logOut-button">
+        Logout
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+<ion-content no-padding>
+    <div class="parent-container">
+    <ion-row>
+      <ion-col col-12 text-center no-padding>
+        <span><img src="assets/images/lips1.svg"/></span>
+      </ion-col>
+      <ion-col col-12 class="search-button" no-padding no-margin>
+        <form no-padding #loginForm="ngForm" (ngSubmit)="SearchArtist()" autocomplete="off">
+          <ion-row class="search-container">
+            <ion-col>
+              <ion-list inset class="search-button-child">
+                <ion-item>
+                  <ion-input placeholder="Search Your Artist" name="pin" id="pinField" type="text" required [(ngModel)]="searchStr"></ion-input>
+                </ion-item>
+              </ion-list>
+              <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+              <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Enter
+              </button>
+              </ion-col>
+            </ion-row>
+        </form>
+      </ion-col>
+    </ion-row>
+    </div>
 </ion-content>

@@ -1,0 +1,12 @@
+page-list-artist {
+  font-family: $logo-cofefe-font;
+  .list-ios .item-block .item-inner {
+      border-bottom: 0.55px solid #8AC9C1;
+  }
+  button{
+    color:black;
+    .button-inner{
+      color:black;
+    }
+  }
+}
